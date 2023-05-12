@@ -21,11 +21,13 @@ function Banner() {
     async function fetchData() {
       try {
         // Make a GET request using the instance
-        const response = await instance.get('/trending/all/week');
+        const request = await instance.get('/trending/all/week');
 
         // Handle the response data
-        console.log(response.data);
-        setMovie(response.data.results);
+        console.log(request.data);
+        setMovie(request.data.results[
+          Math.floor(Math.random() * request.data.results.length - 1)
+        ]);
       } catch (error) {
         // Handle the error
         console.error(error);
