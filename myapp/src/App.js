@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import LoginScreen from './screens/LoginScreen';
 
 const App = () => {
-  const user = "sad";
+  const user = null;
   return (
     <div className="app">
       <BrowserRouter>
@@ -13,7 +13,7 @@ const App = () => {
             <Route path="/*" element={<LoginScreen />} />
           ) : (
             <>
-              <Route path="/" element={<HomeScreen />} />
+              {/* <Route path="/" element={<HomeScreen />} /> */}
               {/* <Route path="/about" element={<HomeScreen />} /> */}
               {/* <Route path="/*" element={<Navigate to="/" />} /> */}
             </>
