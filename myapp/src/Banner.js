@@ -5,18 +5,23 @@ import requests from "./Requests";
 import axios from "axios";
 
 const API_KEY = process.env.REACT_APP_API_KEY;
+
+const instance = axios.create({
+  baseURL: 'https://api.themoviedb.org/3',
+  params: {
+    api_key: API_KEY,
+    language: 'en-US'
+  }
+});
+
 function Banner() {
   const [movie, setMovie] = useState([]);
+
   useEffect(() => {
     async function fetchData() {
       try {
-        // Make a GET request
-        const response = await axios.get('https://api.themoviedb.org/3/trending/all/week', {
-          params: {
-            api_key: API_KEY,
-            language: 'en-US'
-          }
-        });
+        // Make a GET request using the instance
+        const response = await instance.get('/trending/all/week');
 
         // Handle the response data
         console.log(response.data);
@@ -30,9 +35,8 @@ function Banner() {
     fetchData();
   }, []);
 
-
   console.log(movie);
-
+  
   function truncate(string, n) {
     return string?.length > n ? string.substr(0, n - 1) + "..." : string;
   }
