@@ -37,14 +37,10 @@
 }
 
 .row__poster {
-  /* 其他样式设置 */
   opacity: 0;
-  /* 初始设置为透明 */
   transition: opacity 0.5s;
-  /* 过渡属性和时间 */
 }
 
 .row__poster.show {
   opacity: 1;
-  /* 设置为完全不透明 */
 }

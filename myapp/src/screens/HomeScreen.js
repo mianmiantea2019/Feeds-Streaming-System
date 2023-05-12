@@ -10,10 +10,11 @@ function HomeScreen() {
             <Nav />
             <Banner />
             <Row
-                title="NETFLIX ORIGINALS"
+                title="MovieLand Original"
                 fetchUrl={requests.fetchNetflixOriginals}
                 isLargeRow
             />
+            <Row title="Trending Now" fetchUrl={requests.fetchTrending} />
         </>
     )
 }

@@ -2,18 +2,18 @@ import React, { useEffect, useRef } from "react";
 import "./Modal.css";
 
 function Modal({ movie, onClose }) {
+    console.log(movie)
     const base_url = "https://image.tmdb.org/t/p/original/";
-    const imageUrl = `${base_url}${movie.poster_path}`;
+    const imageUrl = base_url + movie.poster_path;
     const modalRef = useRef(null);
+    
     useEffect(() => {
         const handleOutsideClick = (event) => {
             if (modalRef.current && !modalRef.current.contains(event.target)) {
                 onClose();
             }
         };
-
         document.addEventListener("mousedown", handleOutsideClick);
-
         return () => {
             document.removeEventListener("mousedown", handleOutsideClick);
         };

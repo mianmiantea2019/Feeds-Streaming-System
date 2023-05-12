@@ -22,11 +22,11 @@ function Row({ title, fetchUrl, isLargeRow = false }) {
   }, [fetchUrl]);
 
   useEffect(() => {
-    const showImagesDelay = 100; // 延迟时间（毫秒）
+    const showImagesDelay = 100; //delay display
     let timeout;
 
     if (movies.length > 0) {
-      // 设置延迟逐个显示图片
+      // display picture
       timeout = setTimeout(() => {
         setShowImages(true);
       }, showImagesDelay);
@@ -51,7 +51,7 @@ function Row({ title, fetchUrl, isLargeRow = false }) {
       <h2>{title}</h2>
 
       <div className="row__posters">
-        {movies.map(
+        {movies.slice(0, 10).map(
           (movie, index) =>
             ((isLargeRow && movie.poster_path) ||
               (!isLargeRow && movie.backdrop_path)) && (
@@ -63,7 +63,7 @@ function Row({ title, fetchUrl, isLargeRow = false }) {
                   }`}
                 alt={movie.name}
                 style={{
-                  transitionDelay: `${index * 100}ms`, // 根据索引设置过渡延迟时间
+                  transitionDelay: `${index * 100}ms`, 
                 }}
                 onClick={() => openModal(movie)}
               />
