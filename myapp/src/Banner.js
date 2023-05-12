@@ -1,24 +1,35 @@
 import React, { useEffect, useState } from "react";
 import "./Banner.css";
-import axios from "./axios";
+// import axios from "./axios";
 import requests from "./Requests";
+import axios from "axios";
 
+const API_KEY = process.env.REACT_APP_API_KEY;
 function Banner() {
   const [movie, setMovie] = useState([]);
-
   useEffect(() => {
     async function fetchData() {
-      const request = await axios.get(requests.fetchNetflixOriginals);
-      setMovie(
-        request.data.results[
-          Math.floor(Math.random() * request.data.results.length - 1)
-        ]
-      );
-      return request;
+      try {
+        // Make a GET request
+        const response = await axios.get('https://api.themoviedb.org/3/trending/all/week', {
+          params: {
+            api_key: API_KEY,
+            language: 'en-US'
+          }
+        });
+
+        // Handle the response data
+        console.log(response.data);
+        setMovie(response.data.results);
+      } catch (error) {
+        // Handle the error
+        console.error(error);
+      }
     }
 
     fetchData();
   }, []);
+
 
   console.log(movie);
 
