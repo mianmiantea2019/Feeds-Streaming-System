@@ -1,12 +1,20 @@
 import './App.css';
 import HomeScreen from './screens/HomeScreen';
+import { BrowserRouter, Router, Route, Redirect, Routes } from 'react-router-dom';
 
-function App() {
+const App = () => {
+
   return (
-    <div className="App" style={{backgroundColor:"black"}}>
-      <HomeScreen/>
+    <div className="app">
+      <BrowserRouter> 
+      <Routes>
+        <Route exact path="/" element={<HomeScreen />} />
+        <Route path="/about" element={<HomeScreen />} />
+      </Routes> 
+      </BrowserRouter> 
     </div>
   );
-}
+};
+
 
 export default App;

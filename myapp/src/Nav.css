@@ -36,3 +36,16 @@
   right: 20px;
   width: 30px;
 }
+
+.h1-hover-effect {
+  display: inline;
+  font-size: 24px;
+  font-weight: bold;
+  color: grey;
+  text-transform: uppercase;
+}
+
+.h1-hover-effect:hover {
+  color: blue;
+  /* Add any other hover styles you want */
+}

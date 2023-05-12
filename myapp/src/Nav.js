@@ -27,7 +27,7 @@ function Nav() {
           alt="MOVIELAND"
         /> */}
         <div className="nav__logo">
-        <h1 style={{
+          <h1 className="h1-hover-effect"  style={{
           display:"inline",
           fontSize: "24px",
           fontWeight: "bold",
