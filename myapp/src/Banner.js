@@ -1,18 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "./Banner.css";
-// import axios from "./axios";
+import axios from "./axios";
 import requests from "./Requests";
-import axios from "axios";
 
-const API_KEY = process.env.REACT_APP_API_KEY;
 
-const instance = axios.create({
-  baseURL: 'https://api.themoviedb.org/3',
-  params: {
-    api_key: API_KEY,
-    language: 'en-US'
-  }
-});
+
 
 function Banner() {
   const [movie, setMovie] = useState([]);
@@ -20,23 +12,21 @@ function Banner() {
   useEffect(() => {
     async function fetchData() {
       try {
-        // Make a GET request using the instance
-        const request = await instance.get('/trending/all/week');
-
-        // Handle the response data
-        console.log(request.data);
-        setMovie(request.data.results[
+        const request = await axios.get(requests.fetchNetflixOriginals);
+        setMovie(
+          request.data.results[
           Math.floor(Math.random() * request.data.results.length - 1)
-        ]);
+          ]
+        );
+        return request;
       } catch (error) {
-        // Handle the error
-        console.error(error);
+        // Handle the error, e.g., display an error message or perform any necessary actions.
+        console.log('Error occurred while fetching data:', error);
       }
     }
 
     fetchData();
   }, []);
-
   console.log(movie);
   
   function truncate(string, n) {
