@@ -33,9 +33,17 @@
 .modal__close {
     background-color: #ccc;
     border: none;
-    padding: 8px 16px;
+    padding: 10px 20px;
     border-radius: 4px;
     cursor: pointer;
+    font-size: 16px;
+    color: #fff;
+    background-color: #333;
+    transition: background-color 0.3s ease;
+}
+
+.modal__close:hover {
+    background-color: #555;
 }
 
 .modal__title {
