@@ -4,9 +4,13 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import LoginScreen from './screens/LoginScreen';
 import React, { useEffect } from "react";
 import { auth } from "./firebase";
+import { useDispatch, useSelector } from "react-redux";
+import { login, logout, selectUser } from "./features/userSlice";
 
 const App = () => {
-  const user = null;
+  const user = useSelector(selectUser);
+  const dispatch = useDispatch();
+
   useEffect(()=>{
     const unsubscribe = auth.onAuthStateChanged((userAuth) => {
         if(userAuth){
