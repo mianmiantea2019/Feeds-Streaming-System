@@ -16,8 +16,13 @@ const App = () => {
         if(userAuth){
           //loggin
           console.log("userAuth", userAuth)
+          dispatch(login({
+            uid:userAuth.uid,
+            email:userAuth.email
+          }))
         } else {
           //logout
+          dispatch(logout);
         }
     })
     return unsubscribe;
