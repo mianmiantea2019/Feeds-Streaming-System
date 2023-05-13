@@ -13,7 +13,7 @@ function SignupScreen() {
     const [popupMessage, setPopupMessage] = useState('');
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const [isDemoUser, setIsDemoUser] = useState(false);
+    const [isSignUp, setIsSignUp] = useState(false); // Add state to track whether it's sign-up or sign-in
 
     const showErrorPopup = (message) => {
         setPopupOpen(true);
@@ -24,38 +24,38 @@ function SignupScreen() {
         setPopupOpen(false);
     };
 
-    const register = (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
 
-        auth
-            .createUserWithEmailAndPassword(emailRef.current.value, passwordRef.current.value)
-            .then((authUser) => {
-                console.log(authUser);
-                dispatch(login({
-                    email: authUser.user.email,
-                    uid: authUser.user.uid,
-                }));
-                navigate("/home");
-            })
-            .catch((error) => {
-                showErrorPopup(error.message);
-            });
-    };
-
-    const signIn = (e) => {
-        e.preventDefault();
-
-        auth
-            .signInWithEmailAndPassword(emailRef.current.value, passwordRef.current.value)
-            .then((authUser) => {
-                console.log(authUser);
-                dispatch(login({
-                    email: authUser.user.email,
-                    uid: authUser.user.uid,
-                }));
-                navigate("/home");
-            })
-            .catch((error) => showErrorPopup(error.message));
+        if (isSignUp) {
+            // Sign up logic
+            auth
+                .createUserWithEmailAndPassword(emailRef.current.value, passwordRef.current.value)
+                .then((authUser) => {
+                    console.log(authUser);
+                    dispatch(login({
+                        email: authUser.user.email,
+                        uid: authUser.user.uid,
+                    }));
+                    navigate("/home");
+                })
+                .catch((error) => {
+                    showErrorPopup(error.message);
+                });
+        } else {
+            // Sign in logic
+            auth
+                .signInWithEmailAndPassword(emailRef.current.value, passwordRef.current.value)
+                .then((authUser) => {
+                    console.log(authUser);
+                    dispatch(login({
+                        email: authUser.user.email,
+                        uid: authUser.user.uid,
+                    }));
+                    navigate("/home");
+                })
+                .catch((error) => showErrorPopup(error.message));
+        }
     };
 
     const signInDemoUser = () => {
@@ -78,27 +78,35 @@ function SignupScreen() {
             .catch((error) => showErrorPopup(error.message));
     };
 
+    const toggleForm = () => {
+        setIsSignUp((prevState) => !prevState); // Toggle between sign-up and sign-in form
+    };
+
+
+
 
     return (
         <div className="signupScreen">
-                <form>
-                    <h1>Sign In</h1>
-                    
-                    <input style={{ fontSize: "16px" }} ref={emailRef} placeholder="Email" type="email" />
-                    <input style={{ fontSize: "16px" }} ref={passwordRef} placeholder="Password" type="password" />
-                            <button type="submit" onClick={signIn}>
-                                Sign In
-                            </button>
-                        <button type="button" onClick={signInDemoUser}>
-                                Demo User
-                            </button>
-                    <h4>
-                        <span className="signupScreen__gray">New to MovieLand? </span>
-                        <span className="signupScreen__link" onClick={register}>
-                            Sign Up now.
-                        </span>
-                    </h4>
-                </form>
+            <form onSubmit={handleSubmit}>
+                <h1>{!isSignUp ? "Sign Up" : "Sign In"}</h1>
+
+                <input style={{ fontSize: "16px" }} ref={emailRef} placeholder="Email" type="email" />
+                <input style={{ fontSize: "16px" }} ref={passwordRef} placeholder="Password" type="password" />
+                <button type="submit">{!isSignUp ? "Sign Up" : "Sign In"}</button>
+                {isSignUp && (
+                    <button type="button" onClick={signInDemoUser}>
+                        Demo User
+                    </button>
+                )}
+                <h4>
+                    <span className="signupScreen__gray">
+                        {!isSignUp ? "Already have an account? " : "New to MovieLand? "}
+                    </span>
+                    <span className="signupScreen__link" onClick={toggleForm}>
+                        {!isSignUp ? "Sign In now." : "Sign Up now."}
+                    </span>
+                </h4>
+            </form>
             {popupOpen && (
                 <div
                     className="popup"
