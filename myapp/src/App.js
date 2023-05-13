@@ -6,9 +6,11 @@ import React, { useEffect } from "react";
 import { auth } from "./firebase";
 import { useDispatch, useSelector } from "react-redux";
 import { login, logout, selectUser } from "./features/userSlice";
+import ProfileScreen from './screens/ProfileScreen';
 
 const App = () => {
   const user = useSelector(selectUser);
+  console.log(user)
   const dispatch = useDispatch();
 
   useEffect(()=>{
@@ -36,7 +38,10 @@ const App = () => {
             <Route path="/*" element={<LoginScreen />} />
           ) : (
             <>
-              {/* <Route path="/" element={<HomeScreen />} /> */}
+              <Route path="/" element={<HomeScreen />} />
+                <Route path="/profile" element={<ProfileScreen />} />
+
+
               {/* <Route path="/about" element={<HomeScreen />} /> */}
               {/* <Route path="/*" element={<Navigate to="/" />} /> */}
             </>
