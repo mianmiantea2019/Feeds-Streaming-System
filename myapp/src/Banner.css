@@ -1,13 +1,13 @@
 .banner {
   position: relative;
-  height: 565px;
+  height: 841px;
   color: white;
   object-fit: contain;
 }
 
 .banner__contents {
   margin-left: 30px;
-  padding-top: 281px;
+  padding-top: 555px;
   height: 190px;
   display:flex;
   flex-direction: column;

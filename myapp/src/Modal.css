@@ -28,7 +28,13 @@
     font-size: 16px;
     color: #666;
     line-height: 1.4;
+    font-size: 16px;
+    font-family: "Arial", sans-serif;
+    /* text-align: justify; */
 }
+
+
+
 
 .modal__close {
     background-color: #ccc;
