@@ -86,21 +86,12 @@ function SignupScreen() {
                     
                     <input style={{ fontSize: "16px" }} ref={emailRef} placeholder="Email" type="email" />
                     <input style={{ fontSize: "16px" }} ref={passwordRef} placeholder="Password" type="password" />
-                    {!isDemoUser ? (
-                        <>
                             <button type="submit" onClick={signIn}>
                                 Sign In
                             </button>
-                            <button type="button" onClick={() => setIsDemoUser(true)}>
+                        <button type="button" onClick={signInDemoUser}>
                                 Demo User
                             </button>
-                        </>
-                    ) : (
-                        <button type="button" onClick={signInDemoUser}>
-                            Sign In as Demo User
-                        </button>
-                        
-                    )}
                     <h4>
                         <span className="signupScreen__gray">New to MovieLand? </span>
                         <span className="signupScreen__link" onClick={register}>
