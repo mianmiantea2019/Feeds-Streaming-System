@@ -6,6 +6,9 @@ import { useNavigate } from "react-router-dom";
 function LoginScreen() {
   const [signIn, setSignIn] = useState(false);
   const navigate = useNavigate();
+  const goBack = () => {
+    setSignIn(false);
+  };
 
   return (
     <div className="loginScreen">
@@ -18,7 +21,7 @@ function LoginScreen() {
             color: "White",
             textTransform: "uppercase",
           }}
-            onClick={() => navigate("/")}
+            onClick={goBack} // Call the goBack function
           >
             MovieLand
           </h1>
@@ -53,6 +56,8 @@ function LoginScreen() {
             </div>
           </>
         )}
+
+
       </div>
     </div>
   );
