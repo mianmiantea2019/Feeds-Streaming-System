@@ -2,9 +2,23 @@ import './App.css';
 import HomeScreen from './screens/HomeScreen';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import LoginScreen from './screens/LoginScreen';
+import React, { useEffect } from "react";
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/auth';
 
 const App = () => {
   const user = null;
+  useEffect(()=>{
+    firebase.auth().onAuthStateChanged((userAuth) => {
+        if(userAuth){
+          //loggin
+          console.log(userAuth)
+        } else {
+          //logout
+        }
+    })
+  },[])
+
   return (
     <div className="app">
       <BrowserRouter>
