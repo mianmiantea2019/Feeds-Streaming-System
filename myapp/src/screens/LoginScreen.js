@@ -17,8 +17,9 @@ function LoginScreen() {
             fontWeight: "bold",
             color: "Grey",
             textTransform: "uppercase",
-          }}>
+          }}
             onClick={() => navigate("/")}
+          >
             MovieLand
           </h1>
         </div>
