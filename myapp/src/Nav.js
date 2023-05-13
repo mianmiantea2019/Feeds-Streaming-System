@@ -2,17 +2,30 @@ import React, { useState, useEffect } from "react";
 import "./Nav.css";
 // import logo from "./image/logo.JPG";
 import { useNavigate } from "react-router-dom";
+import { selectUser, logout } from "./features/userSlice";
+import { useDispatch, useSelector } from "react-redux";
+
 
 function Nav() {
   const [show, handleShow] = useState(false);
+  const user = useSelector(selectUser);
+  const dispatch = useDispatch();
   const navigate = useNavigate();
-
 
   const transitionNavBar = () => {
     if (window.scrollY > 100) {
       handleShow(true);
     } else {
       handleShow(false);
+    }
+  };
+
+
+  const handleLogoClick = () => {
+    if (user) {
+      navigate("/home");
+    } else {
+      navigate("/login");
     }
   };
 
@@ -36,7 +49,7 @@ function Nav() {
             color: "Grey",
             textTransform: "uppercase",
           }}
-            onClick={() => navigate("/")}
+            onClick={handleLogoClick}
           >
             MovieLand
           </h1>
