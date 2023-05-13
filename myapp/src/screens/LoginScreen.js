@@ -15,7 +15,7 @@ function LoginScreen() {
             display: "inline",
             fontSize: "24px",
             fontWeight: "bold",
-            color: "Grey",
+            color: "White",
             textTransform: "uppercase",
           }}
             onClick={() => navigate("/")}
@@ -23,9 +23,9 @@ function LoginScreen() {
             MovieLand
           </h1>
         </div>
-        <button onClick={() => setSignIn(true)} className="loginScreen__button">
+        {/* <button onClick={() => setSignIn(true)} className="loginScreen__button">
           Sign In
-        </button>
+        </button> */}
 
         <div className="loginScreen__gradient" />
       </div>

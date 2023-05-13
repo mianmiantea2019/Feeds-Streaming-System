@@ -6,6 +6,7 @@ import Nav from "../Nav";
 import PlansScreen from "./PlansScreen";
 import "./ProfileScreen.css";
 import { useNavigate } from "react-router-dom";
+import sub from "../image/subscription.jpg";
 
 function ProfileScreen() {
   const user = useSelector(selectUser);
@@ -24,11 +25,12 @@ function ProfileScreen() {
   return (
     <div className="profileScreen">
       <Nav />
+
       <div className="profileScreen__body">
         <h1>Edit Profile</h1>
         <div className="profileScreen__info">
           <img
-            src="https://pbs.twimg.com/profile_images/1240119990411550720/hBEe3tdn_400x400.png"
+            src={sub}
             alt=""
           />
           <div className="profileScreen__details">
