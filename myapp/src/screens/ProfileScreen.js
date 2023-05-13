@@ -1,14 +1,26 @@
 import React from "react";
-import { useSelector } from "react-redux";
-import { selectUser } from "../features/userSlice";
+import { useSelector, useDispatch } from "react-redux";
+import { selectUser, logout } from "../features/userSlice";
 import { auth } from "../firebase";
 import Nav from "../Nav";
 import PlansScreen from "./PlansScreen";
 import "./ProfileScreen.css";
+import { useNavigate } from "react-router-dom";
 
 function ProfileScreen() {
   const user = useSelector(selectUser);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
+  const handleSignOut = () => {
+    auth.signOut().then(() => {
+      // User signed out successfully
+      // Clear user information from Redux store
+      dispatch(logout());
+      // Redirect to home page
+      navigate("/");
+    });
+  };
   return (
     <div className="profileScreen">
       <Nav />
@@ -26,7 +38,7 @@ function ProfileScreen() {
 
               <PlansScreen />
               <button
-                onClick={() => auth.signOut()}
+                onClick={() => handleSignOut()}
                 className="profileScreen__signOut"
               >
                 Sign Out
