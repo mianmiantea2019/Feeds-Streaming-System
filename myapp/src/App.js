@@ -3,20 +3,20 @@ import HomeScreen from './screens/HomeScreen';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import LoginScreen from './screens/LoginScreen';
 import React, { useEffect } from "react";
-import firebase from 'firebase/compat/app';
-import 'firebase/compat/auth';
+import { auth } from "./firebase";
 
 const App = () => {
   const user = null;
   useEffect(()=>{
-    firebase.auth().onAuthStateChanged((userAuth) => {
+    const unsubscribe = auth.onAuthStateChanged((userAuth) => {
         if(userAuth){
           //loggin
-          console.log(userAuth)
+          console.log("userAuth", userAuth)
         } else {
           //logout
         }
     })
+    return unsubscribe;
   },[])
 
   return (
