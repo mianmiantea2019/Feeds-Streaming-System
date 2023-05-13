@@ -33,6 +33,16 @@
 .nav__avatar {
   cursor: pointer;
   position: fixed;
-  right: 20px;
+  right: 79px;
   width: 30px;
+}
+
+.nav__avatar {
+  transition: transform 0.2s;
+  cursor: pointer;
+  width:35px
+}
+
+.nav__avatar:hover {
+  transform: scale(1.2);
 }
