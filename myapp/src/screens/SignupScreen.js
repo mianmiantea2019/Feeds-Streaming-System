@@ -1,13 +1,16 @@
 import React, { useRef, useState } from "react";
 import { auth } from "../firebase";
 import "./SignupScreen.css";
+import { useNavigate } from "react-router-dom";
 
 function SignupScreen() {
     const emailRef = useRef(null);
     const passwordRef = useRef(null);
     const [popupOpen, setPopupOpen] = useState(false);
     const [popupMessage, setPopupMessage] = useState('');
+    const navigate = useNavigate();
 
+    
     const showErrorPopup = (message) => {
         setPopupOpen(true);
         setPopupMessage(message);
@@ -28,6 +31,7 @@ function SignupScreen() {
             )
             .then((authUser) => {
                 console.log(authUser);
+                navigate("/")
             })
             .catch((error) => {
                 showErrorPopup(error.message);
@@ -44,19 +48,37 @@ function SignupScreen() {
             )
             .then((authUser) => {
                 console.log(authUser);
+                navigate("/")
             })
             .catch((error) => showErrorPopup(error.message));
     };
+
+    const signInDemoUser = () => {
+        emailRef.current.value = "test123@gmail.com";
+        passwordRef.current.value = "123456";
+        auth
+            .signInWithEmailAndPassword(
+                emailRef.current.value,
+                passwordRef.current.value
+            )
+            .then((authUser) => {
+                console.log(authUser);
+            })
+            .catch((error) => showErrorPopup(error.message));
+    };
+
     return (
         <div className="signupScreen">
             <form>
                 <h1>Sign In</h1>
-                <input ref={emailRef} placeholder="Email" type="email" />
-                <input ref={passwordRef} placeholder="Password" type="password" />
+                <input style={{ fontSize: "16px" }} ref={emailRef} placeholder="Email" type="email" />
+                <input style={{fontSize: "16px"}}  ref={passwordRef} placeholder="Password" type="password" />
                 <button type="submit" onClick={signIn}>
                     Sign In
                 </button>
-
+                <button type="submit" onClick={signInDemoUser}>
+                   Demo User
+                </button>
                 <h4>
                     <span className="signupScreen__gray">New to MovieLand? </span>
                     <span className="signupScreen__link" onClick={register}>
