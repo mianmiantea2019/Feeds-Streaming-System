@@ -88,22 +88,22 @@ function SignupScreen() {
     return (
         <div className="signupScreen">
             <form onSubmit={handleSubmit}>
-                <h1>{isSignUp ? "Sign Up" : "Sign In"}</h1>
+                <h1>{!isSignUp ? "Sign Up" : "Sign In"}</h1>
 
                 <input style={{ fontSize: "16px" }} ref={emailRef} placeholder="Email" type="email" />
                 <input style={{ fontSize: "16px" }} ref={passwordRef} placeholder="Password" type="password" />
-                <button type="submit">{isSignUp ? "Sign Up" : "Sign In"}</button>
-                {!isSignUp && (
+                <button type="submit">{!isSignUp ? "Sign Up" : "Sign In"}</button>
+                {isSignUp && (
                     <button type="button" onClick={signInDemoUser}>
                         Demo User
                     </button>
                 )}
                 <h4>
                     <span className="signupScreen__gray">
-                        {isSignUp ? "Already have an account? " : "New to MovieLand? "}
+                        {!isSignUp ? "Already have an account? " : "New to MovieLand? "}
                     </span>
                     <span className="signupScreen__link" onClick={toggleForm}>
-                        {isSignUp ? "Sign In now." : "Sign Up now."}
+                        {!isSignUp ? "Sign In now." : "Sign Up now."}
                     </span>
                 </h4>
             </form>

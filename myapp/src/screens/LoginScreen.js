@@ -2,12 +2,17 @@ import React, { useState } from "react";
 import "./LoginScreen.css";
 import SignupScreen from "./SignupScreen";
 import { useNavigate } from "react-router-dom";
+import Row from '../Row'
+import requests from "../Requests";
 
 function LoginScreen() {
   const [signIn, setSignIn] = useState(false);
   const navigate = useNavigate();
   const goBack = () => {
     setSignIn(false);
+  };
+  const handleSignup = () => {
+    navigate('/signup');
   };
 
   return (
@@ -26,9 +31,9 @@ function LoginScreen() {
             MovieLand
           </h1>
         </div>
-        {/* <button onClick={() => setSignIn(true)} className="loginScreen__button">
-          Sign In
-        </button> */}
+        <button onClick={() => setSignIn(true)} className="loginScreen__button">
+          Sign Up
+        </button>
 
         <div className="loginScreen__gradient" />
       </div>
@@ -44,15 +49,17 @@ function LoginScreen() {
               Ready to Dive In? Enter Your Email to Start Exploring Our Collection.
             </h3>
             <div className="loginScreen__input">
-              <form>
-                  <input style={{ fontSize: "16px" }} type="email" placeholder="Email Address" />
-                <button
+              <div className="loginScreen__input">
+                  <form classname="home_poster" >
+                {/* <button
                   onClick={() => setSignIn(true)}
                   className="loginScreen__getStarted"
                 >
-                  Sign in
-                </button>
+                  Ramdom
+                </button> */}
+                    <Row fetchUrl={requests.fetchActionMovies} />
               </form>
+              </div>
             </div>
           </>
         )}
