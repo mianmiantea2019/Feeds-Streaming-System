@@ -8,7 +8,7 @@ https://movieland-a9899.web.app/
 ## Technologies Used
 
 - React: A popular JavaScript library for building user interfaces.
-- Redux: A predictable state management library for managing the application's global state.
+- Redux: A state management library for managing the application's global state.
 - Firebase: A comprehensive backend platform that provides authentication, hosting, and database services.
 - TMDB API: An API that provides access to a vast collection of movie data.
 - Stripe: A payment processing platform that ensures secure and seamless transactions.
