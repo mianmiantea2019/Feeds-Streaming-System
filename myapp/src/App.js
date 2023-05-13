@@ -1,12 +1,27 @@
 import './App.css';
 import HomeScreen from './screens/HomeScreen';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import LoginScreen from './screens/LoginScreen';
 
-function App() {
+const App = () => {
+  const user = null;
   return (
-    <div className="App" style={{backgroundColor:"black"}}>
-      <HomeScreen/>
+    <div className="app">
+      <BrowserRouter>
+        <Routes>
+          {!user ? (
+            <Route path="/*" element={<LoginScreen />} />
+          ) : (
+            <>
+              {/* <Route path="/" element={<HomeScreen />} /> */}
+              {/* <Route path="/about" element={<HomeScreen />} /> */}
+              {/* <Route path="/*" element={<Navigate to="/" />} /> */}
+            </>
+          )}
+        </Routes>
+      </BrowserRouter>
     </div>
   );
-}
+};
 
 export default App;
