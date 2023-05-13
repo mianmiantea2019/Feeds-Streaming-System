@@ -5,7 +5,7 @@ This project is a movie streaming application hosted on Firebase, built using Re
 ## Project Demo
 https://movieland-a9899.web.app/
 
-![MovieLand Demo]([relative/path/to/your_image_file.png](https://github.com/mianmiantea2019/MovieLand/blob/master/image/MovieLandDemo5.gif))
+![MovieLand Demo](https://github.com/mianmiantea2019/MovieLand/blob/master/image/MovieLandDemo5.gif)
 
 ## Technologies Used
 
