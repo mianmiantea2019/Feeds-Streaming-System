@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import "./LoginScreen.css";
 import SignupScreen from "./SignupScreen";
+import { useNavigate } from "react-router-dom";
 
 function LoginScreen() {
   const [signIn, setSignIn] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <div className="loginScreen">
@@ -16,6 +18,7 @@ function LoginScreen() {
             color: "Grey",
             textTransform: "uppercase",
           }}>
+            onClick={() => navigate("/")}
             MovieLand
           </h1>
         </div>
@@ -40,7 +43,7 @@ function LoginScreen() {
 
             <div className="loginScreen__input">
               <form>
-                <input type="email" placeholder="Email Address" />
+                  <input style={{ fontSize: "16px" }} type="email" placeholder="Email Address" />
                 <button
                   onClick={() => setSignIn(true)}
                   className="loginScreen__getStarted"
