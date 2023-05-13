@@ -40,8 +40,6 @@ function LoginScreen() {
             <h3>
               Ready to Dive In? Enter Your Email to Start Exploring Our Collection.
             </h3>
-
-
             <div className="loginScreen__input">
               <form>
                   <input style={{ fontSize: "16px" }} type="email" placeholder="Email Address" />
@@ -49,7 +47,7 @@ function LoginScreen() {
                   onClick={() => setSignIn(true)}
                   className="loginScreen__getStarted"
                 >
-                  GET STARTED
+                  Sign in
                 </button>
               </form>
             </div>
