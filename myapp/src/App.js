@@ -13,33 +13,33 @@ const App = () => {
   console.log(user)
   const dispatch = useDispatch();
 
-  useEffect(()=>{
+  useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((userAuth) => {
-        if(userAuth){
-          //loggin
-          console.log("userAuth", userAuth)
-          dispatch(login({
-            uid:userAuth.uid,
-            email:userAuth.email
-          }))
-        } else {
-          //logout
-          dispatch(logout);
-        }
+      if (userAuth) {
+        //loggin
+        console.log("userAuth", userAuth)
+        dispatch(login({
+          uid: userAuth.uid,
+          email: userAuth.email
+        }))
+      } else {
+        //logout
+        dispatch(logout);
+      }
     })
     return unsubscribe;
-  },[])
+  }, [])
 
   return (
     <div className="app">
       <BrowserRouter>
         <Routes>
           {!user ? (
-            <Route path="/*" element={<LoginScreen />} />
+            <Route path="/" element={<LoginScreen />} />
           ) : (
             <>
               <Route path="/home" element={<HomeScreen />} />
-                <Route path="/profile" element={<ProfileScreen />} />
+              <Route path="/profile" element={<ProfileScreen />} />
             </>
           )}
         </Routes>
