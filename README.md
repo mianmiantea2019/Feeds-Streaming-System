@@ -44,8 +44,8 @@ To get started with the project, follow these steps:
 
 ## Future Subscription Plans
 
-In future updates, the movie streaming application will introduce subscription plans to provide users with different tiers of access and additional features. This will allow users to choose a plan that best suits their preferences and unlock exclusive content.
-Incorporates testing using Jest and React Testing Library.
+-In future updates, the movie streaming application will introduce subscription plans to provide users with different tiers of access and additional features. This will allow users to choose a plan that best suits their preferences and unlock exclusive content.
+-Incorporates testing using Jest and React Testing Library.
 
 ## License
 
