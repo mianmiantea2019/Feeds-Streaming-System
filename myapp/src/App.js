@@ -10,14 +10,12 @@ import ProfileScreen from './screens/ProfileScreen';
 
 const App = () => {
   const user = useSelector(selectUser);
-  console.log(user)
   const dispatch = useDispatch();
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((userAuth) => {
       if (userAuth) {
         //loggin
-        console.log("userAuth", userAuth)
         dispatch(login({
           uid: userAuth.uid,
           email: userAuth.email

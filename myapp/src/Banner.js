@@ -21,7 +21,6 @@ function Banner() {
         return request;
       } catch (error) {
         // Handle the error, e.g., display an error message or perform any necessary actions.
-        console.log('Error occurred while fetching data:', error);
       }
     }
 
@@ -37,7 +36,7 @@ function Banner() {
     <header
       className="banner"
       style={{
-        backgroundSize: "contain",
+        backgroundSize: "cover",
         backgroundImage: `url("https://image.tmdb.org/t/p/original/${movie?.backdrop_path}")`,
         backgroundPosition: "center center",
       }}

@@ -2,7 +2,6 @@ import React, { useEffect, useRef } from "react";
 import "./Modal.css";
 
 function Modal({ movie, onClose }) {
-    console.log(movie)
     const base_url = "https://image.tmdb.org/t/p/original/";
     const imageUrl = base_url + movie.poster_path;
     const modalRef = useRef(null);
