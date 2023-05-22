@@ -32,7 +32,6 @@ function SignupScreen() {
             auth
                 .createUserWithEmailAndPassword(emailRef.current.value, passwordRef.current.value)
                 .then((authUser) => {
-                    console.log(authUser);
                     dispatch(login({
                         email: authUser.user.email,
                         uid: authUser.user.uid,
@@ -47,7 +46,6 @@ function SignupScreen() {
             auth
                 .signInWithEmailAndPassword(emailRef.current.value, passwordRef.current.value)
                 .then((authUser) => {
-                    console.log(authUser);
                     dispatch(login({
                         email: authUser.user.email,
                         uid: authUser.user.uid,
@@ -68,7 +66,6 @@ function SignupScreen() {
         auth
             .signInWithEmailAndPassword(emailRef.current.value, passwordRef.current.value)
             .then((authUser) => {
-                console.log(authUser);
                 dispatch(login({
                     email: authUser.user.email,
                     uid: authUser.user.uid,
