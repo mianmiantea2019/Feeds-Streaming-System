@@ -5,7 +5,9 @@ This project is a feeds app that allows users to explore and interact with vario
 ## Project Demo
 https://lit-cove-88468-0beb0a424a06.herokuapp.com/
 
-![FeedsApp Demo]()
+![FeedsApp Demo](https://github.com/mianmiantea2019/Feeds-App/tree/master/image/demo_project.mp4)
+![Swagger Demo](https://github.com/mianmiantea2019/Feeds-App/tree/master/image/swagger_login.mp4)
+![Ranking Demo](https://github.com/mianmiantea2019/HappyPlant/blob/main/demo/demo_ranking.mp4)
 
 ## Table of Contents
 
@@ -13,7 +15,6 @@ https://lit-cove-88468-0beb0a424a06.herokuapp.com/
 - [Technologies Used](#technologies-used)
 - [Getting Started](#getting-started)
 - [Usage](#usage)
-- [API Documentation](#api-documentation)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -31,12 +32,9 @@ https://lit-cove-88468-0beb0a424a06.herokuapp.com/
 - React for building user interfaces.
 - Material-UI (MUI) for a consistent and attractive UI design.
 - Swiper for a sleek and responsive content carousel.
-- axios for making API requests.
-- react-redux for state management.
-- formik for form handling and validation.
-- dayjs for date and time manipulation.
-- react-highlight-words for highlighting search results.
-- ...
+- Axios for making API requests.
+- React-redux for state management.
+- React-highlight-words for highlighting search results.
 
 ### Backend
 
@@ -44,9 +42,8 @@ https://lit-cove-88468-0beb0a424a06.herokuapp.com/
 - MongoDB with mongoose for database interactions.
 - JSON Web Tokens (jsonwebtoken) for user authentication.
 - Redis for caching and improving performance.
-- socket.io for real-time communication.
-- express-rate-limit and express-slow-down for rate limiting and slowing down requests.
-- ...
+- Socket.io for real-time communication.
+- Express-rate-limit and express-slow-down for rate limiting and slowing down requests.
 
 ## Getting Started
 
@@ -55,8 +52,8 @@ To run the Feeds App on your local machine, follow these steps:
 1. Clone the repository: `git clone https://github.com/mianmiantea2019/feeds-app.git`
 2. Navigate to the frontend directory: `cd feeds-app/frontend`
 3. Build frontend project: `yarn run build`
-5. Install backend dependencies: `yarn install`
-6. Start the backend server: `yarn start`
+4. Install backend dependencies: `yarn install`
+5. Start the backend server: `yarn start`
 
 The app should now be accessible at http://localhost:5000.
 
@@ -67,10 +64,6 @@ The app should now be accessible at http://localhost:5000.
 - Click on a content item to view more details.
 - Mark content items as favorites by clicking the "Favorite" button.
 - Real-time updates will notify the updates on user favoriate movie session.
-
-## API Documentation
-
-API documentation for the backend endpoints can be found in [API_DOCS.md]().
 
 ## Contributing
 
