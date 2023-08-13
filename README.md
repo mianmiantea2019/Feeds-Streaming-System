@@ -1,37 +1,94 @@
-# MovieLand
+# Feeds App
 
-This project is a movie streaming application hosted on Firebase, built using React and Redux. It utilizes the TMDB API for movie data retrieval and offers various features such as user authentication, and seamless movie streaming. 
+This project is a feeds app that allows users to explore and interact with various media content. It utilizes modern web technologies and libraries to provide a seamless user experience. The app includes features such as searching for media content, adding favorites, and displaying popular movies based on user preferences.
 
 ## Project Demo
-https://movieland-a9899.web.app/
+https://lit-cove-88468-0beb0a424a06.herokuapp.com/
 
-![MovieLand Demo](https://github.com/mianmiantea2019/MovieLand/blob/master/image/MovieLandDemo5.gif)
+![FeedsApp Demo]()
+
+## Table of Contents
+
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Getting Started](#getting-started)
+- [Usage](#usage)
+- [API Documentation](#api-documentation)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Features
+
+- Browse and view a feed of content items.
+- Search for specific content items using text-based search.
+- Mark content items as favorites for quick access.
+- Real-time updates for new content using WebSocket communication.
 
 ## Technologies Used
 
-- React: A popular JavaScript library for building user interfaces.
-- Redux: A state management library for managing the application's global state.
-- Firebase: A comprehensive backend platform that provides authentication, hosting, and database services.
-- TMDB API: An API that provides access to a vast collection of movie data.
-- Stripe: A payment processing platform that ensures secure and seamless transactions.
-- Jest and React Testing Library: Testing frameworks for unit testing and user interaction testing.
-- React Router Dom: A routing library for handling navigation within the application.
+### Frontend
+
+- React for building user interfaces.
+- Material-UI (MUI) for a consistent and attractive UI design.
+- Swiper for a sleek and responsive content carousel.
+- axios for making API requests.
+- react-redux for state management.
+- formik for form handling and validation.
+- dayjs for date and time manipulation.
+- react-highlight-words for highlighting search results.
+- ...
+
+### Backend
+
+- Express.js for building the backend server.
+- MongoDB with mongoose for database interactions.
+- JSON Web Tokens (jsonwebtoken) for user authentication.
+- Redis for caching and improving performance.
+- socket.io for real-time communication.
+- express-rate-limit and express-slow-down for rate limiting and slowing down requests.
+- ...
+
+## Getting Started
+
+To run the Feeds App on your local machine, follow these steps:
+
+1. Clone the repository: `git clone https://github.com/mianmiantea2019/feeds-app.git`
+2. Navigate to the frontend directory: `cd feeds-app/frontend`
+3. Build frontend project: `yarn run build`
+5. Install backend dependencies: `yarn install`
+6. Start the backend server: `yarn start`
+
+The app should now be accessible at http://localhost:5000.
+
+## Usage
+
+- Browse the feed by scrolling through the content items.
+- Use the search bar to search for specific content.
+- Click on a content item to view more details.
+- Mark content items as favorites by clicking the "Favorite" button.
+- Real-time updates will notify the updates on user favoriate movie session.
+
+## API Documentation
+
+API documentation for the backend endpoints can be found in [API_DOCS.md]().
+
+## Contributing
+
+Contributions to the Feeds App are welcome! If you find a bug or want to add a new feature, please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch for your feature: `git checkout -b feature-name`
+3. Make your changes and commit them: `git commit -m "Add new feature"`
+4. Push to your fork: `git push origin feature-name`
+5. Create a pull request to the main repository.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
 
 ## Dependencies
 
-- `@reduxjs/toolkit`: ^1.9.5
-- `@stripe/stripe-js`: ^1.52.1
-- `@testing-library/jest-dom`: ^5.16.5
-- `@testing-library/react`: ^13.4.0
-- `@testing-library/user-event`: ^13.5.0
-- `axios`: ^1.4.0
-- `firebase`: ^9.22.0
-- `react`: ^18.2.0
-- `react-dom`: ^18.2.0
-- `react-redux`: ^8.0.5
-- `react-router-dom`: ^6.11.1
-- `react-scripts`: 5.0.1
-- `web-vitals`: ^2.1.4
 
 ## Getting Started
 
