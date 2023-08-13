@@ -30,7 +30,6 @@ https://lit-cove-88468-0beb0a424a06.herokuapp.com/
 
 - Browse and view a feed of content items.
 - Search for specific content items using text-based search.
-- Mark content items as favorites for quick access.
 - Real-time updates for new content using WebSocket communication.
 
 ## Technologies Used
