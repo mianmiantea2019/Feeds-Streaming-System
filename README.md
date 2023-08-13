@@ -5,9 +5,9 @@ This project is a feeds app that allows users to explore and interact with vario
 ## Project Demo
 https://lit-cove-88468-0beb0a424a06.herokuapp.com/
 
-![FeedsApp Demo](https://github.com/mianmiantea2019/Feeds-App/tree/master/image/demo_project.mp4)
-![Swagger Demo](https://github.com/mianmiantea2019/Feeds-App/tree/master/image/swagger_login.mp4)
-![Ranking Demo](https://github.com/mianmiantea2019/HappyPlant/blob/main/demo/demo_ranking.mp4)
+![FeedsApp Demo](https://github.com/mianmiantea2019/Feeds-App/master/image/demo_project.mp4)
+![Swagger Demo](https://github.com/mianmiantea2019/Feeds-App/master/image/swagger_login.mp4)
+![Ranking Demo](https://github.com/mianmiantea2019/Feeds-App/master/image/demo_ranking.mp4)
 
 ## Table of Contents
 
