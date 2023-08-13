@@ -82,23 +82,6 @@ Contributions to the Feeds App are welcome! If you find a bug or want to add a n
 4. Push to your fork: `git push origin feature-name`
 5. Create a pull request to the main repository.
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-
-## Dependencies
-
-
-## Getting Started
-
-To get started with the project, follow these steps:
-
-1. Clone the repository: `git clone`
-2. Install the dependencies: `yarn install`
-3. Configure the Firebase project with your own credentials.
-4. Start the development server: `yarn start`
-
 ## Future Subscription Plans
 
 - In future updates, the movie streaming application will introduce subscription plans to provide users with different tiers of access and additional features. This will allow users to choose a plan that best suits their preferences and unlock exclusive content.
