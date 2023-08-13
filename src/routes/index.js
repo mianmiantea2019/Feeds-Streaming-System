@@ -15,6 +15,7 @@ router.use("/reviews", reviewRoute);
 router.use("/:mediaType", mediaRoute);
 router.use("/news", newsRoute);
 router.use("/technology", techRoute);
+router.use("/hotmovie", RankingRoute);
 router.use("/resturants", ResturantRoute);
 
 export default router;

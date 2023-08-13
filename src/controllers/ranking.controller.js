@@ -7,27 +7,20 @@ const getTopMovies = async (req, res) => {
   try {
     const redisClient = await createRedisConn();
     const key = `popular_movies`;
-    const start = 0; // Start index of the range
-    const stop = 9; // End index of the range (get top 10 movies)
 
-    redisClient.zRevRank(key, start, stop, 'WITHSCORES', async (err, results) => {
-      if (err) {
-        console.error('Error fetching top movies:', err);
-        responseHandler.error(res);
-      } else {
-        const topMovies = [];
-        for (let i = 0; i < results.length; i += 2) {
-          const movieId = results[i];
-          const score = parseInt(results[i + 1]);
-          topMovies.push({ movieId, score });
-        }
-        console.log(topMovies);
-        responseHandler.ok(res, topMovies);
+    let results = await redisClient.ZRANGE(`popular_movies`, 0, -1, 'WITHSCORES')
+    const reversedArray = results.reverse();
+    const moviesWithScores = [];
+    for (const movieId of results) {
+      const score = await redisClient.zScore(key, movieId);
+      const mediaName = await redisClient.hGet('movies_info', movieId);
+
+      if (score !== 0) {
+        moviesWithScores.push({ movieId, mediaName, score });
       }
-
-      // Always remember to quit the Redis connection
-      redisClient.quit();
-    });
+    }
+    redisClient.quit();
+    responseHandler.ok(res, moviesWithScores);
   } catch {
     responseHandler.error(res);
   }
