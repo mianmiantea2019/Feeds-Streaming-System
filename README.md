@@ -2,20 +2,22 @@
 
 This project is a feeds app that allows users to explore and interact with various media content. It utilizes modern web technologies and libraries to provide a seamless user experience. The app includes features such as searching for media content, adding favorites, and displaying popular movies based on user preferences.
 
-## Project Demo
+## Project Live Demo
+
 https://lit-cove-88468-0beb0a424a06.herokuapp.com/
 
 ![FeedsApp Demo](https://github.com/mianmiantea2019/Feeds-App/blob/master/image/app_demo_v2.gif)
 
-
-### Swagger UI demo for a simple User Registration using Swagger JSON
+  
+## 1. Swagger UI demo for a simple User Registration using Swagger JSON
 
 ![Swagger Demo](https://github.com/mianmiantea2019/Feeds-App/blob/master/image/swagger_demo.gif)
 
 
-### Real-Time Movie Ranking Updates with Two Users
+## 2. Real-Time Movie Ranking Updates with Two Users
 
 ![Ranking Demo](https://github.com/mianmiantea2019/Feeds-App/blob/master/image/ranking_demo.gif)
+
 
 ## Table of Contents
 
@@ -25,6 +27,7 @@ https://lit-cove-88468-0beb0a424a06.herokuapp.com/
 - [Usage](#usage)
 - [Contributing](#contributing)
 - [License](#license)
+
 
 ## Features
 
