@@ -2,6 +2,16 @@
 
 This project is a feeds app that allows users to explore and interact with various media content. It utilizes modern web technologies and libraries to provide a seamless user experience. The app includes features such as searching for media content, adding favorites, and displaying popular movies based on user preferences.
 
+## Table of Contents
+
+- [Project Live Demo](#Project-Live-Demo)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Getting Started](#getting-started)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+  
 ## Project Live Demo
 
 https://lit-cove-88468-0beb0a424a06.herokuapp.com/
@@ -17,17 +27,6 @@ https://lit-cove-88468-0beb0a424a06.herokuapp.com/
 ## 2. Real-Time Movie Ranking Updates with Two Users
 
 ![Ranking Demo](https://github.com/mianmiantea2019/Feeds-App/blob/master/image/ranking_demo.gif)
-
-
-## Table of Contents
-
-- [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Getting Started](#getting-started)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
-
 
 ## Features
 
