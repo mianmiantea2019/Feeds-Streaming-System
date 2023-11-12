@@ -13,8 +13,7 @@ This project is a feeds app that allows users to explore and interact with vario
 - [License](#license)
   
 ## Project Live Demo
-
-![Live Demo](https://lit-cove-88468-0beb0a424a06.herokuapp.com/)
+https://lit-cove-88468-0beb0a424a06.herokuapp.com/
 
 ![FeedsApp Demo](https://github.com/mianmiantea2019/Feeds-App/blob/master/image/app_demo_v2.gif)
 
